@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".yacht.YachtActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/yachtHalfWidthGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperOnesLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/yachtUpperOnesTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_ones"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperOnesScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperOnesScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperTwosLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperOnesLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperTwosTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_twos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperTwosScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperTwosScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperThreesLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperTwosLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperThreesTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_threes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperThreesScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperThreesScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperFoursLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperThreesLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperFoursTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_fours"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperFoursScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperFoursScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperFivesLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperFoursLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperFivesTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_fives"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperFivesScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperFivesScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperSixesLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperFivesLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperSixesTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_sixes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperSixesScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperSixesScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperTotalLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperSixesLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperTotalTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_upper_total"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperTotalScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperTotalScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtUpperBonusLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperTotalLayout">
+
+        <TextView
+            android:id="@+id/yachtUpperBonusTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_upper_bonus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtUpperBonusScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtUpperBonusScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerThreeOfAKindLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/yachtLowerThreeOfAKindTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_three_of_a_kind"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerThreeOfAKindScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerThreeOfAKindScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerFourOfAKindLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerThreeOfAKindLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerFourOfAKindTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_four_of_a_kind"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerFourOfAKindScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerFourOfAKindScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerFullHouseLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerFourOfAKindLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerFullHouseTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_full_house"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerFullHouseScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerFullHouseScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerSmallStraightLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerFullHouseLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerSmallStraightTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_small_straight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerSmallStraightScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerSmallStraightScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerLargeStraightLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerSmallStraightLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerLargeStraightTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_large_straight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerLargeStraightScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerLargeStraightScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerYachtLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerLargeStraightLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerYachtTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_yacht"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerYachtScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerYachtScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerChoiceLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerYachtLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerChoiceTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_score_choice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerChoiceScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerChoiceScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtLowerTotalLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerChoiceLayout">
+
+        <TextView
+            android:id="@+id/yachtLowerTotalTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_lower_total"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtLowerTotalScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtLowerTotalScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/yachtGrandTotalLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtLowerTotalLayout">
+
+        <TextView
+            android:id="@+id/yachtGrandTotalTitleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical|end"
+            android:text="@string/yacht_grand_total"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yachtGrandTotalScoreLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/yachtGrandTotalScoreLabel"
+            android:layout_width="@dimen/yacht_score_label_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/yacht_score_label_margin_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="@dimen/yacht_score_label_margin_vertical"
+            android:gravity="center_vertical|end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="50" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/yachtRollButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/yachtDiceLayout"
+        app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtUpperBonusLayout"
+        tools:text="@string/yacht_roll_1" />
+
+    <LinearLayout
+        android:id="@+id/yachtDiceLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtGrandTotalLayout">
+
+        <Button
+            android:id="@+id/yachtDiceButton0"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceButton1"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceButton2"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceButton3"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceButton4"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            tools:text="6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/yachtDiceHeldLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yachtDiceLayout">
+
+        <Button
+            android:id="@+id/yachtDiceHeldButton0"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceHeldButton1"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceHeldButton2"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceHeldButton3"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            tools:text="6" />
+
+        <Button
+            android:id="@+id/yachtDiceHeldButton4"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/die_dim"
+            android:layout_height="@dimen/die_dim"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            tools:text="6" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

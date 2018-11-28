@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Game Gallery</string>
+    <string name="game_checkers">Checkers</string>
+    <string name="game_go_fish">Go Fish</string>
+    <string name="game_dominoes">Dominoes</string>
+    <string name="game_backgammon">Backgammon</string>
+    <string name="game_yacht">Yacht</string>
+    <string name="new_game">New Game</string>
+    <string name="yacht_high_score">HIGH SCORE</string>
+    <string name="yacht_score_not_marked">-</string>
+    <string name="yacht_score_ones">Ones</string>
+    <string name="yacht_score_twos">Twos</string>
+    <string name="yacht_score_threes">Threes</string>
+    <string name="yacht_score_fours">Fours</string>
+    <string name="yacht_score_fives">Fives</string>
+    <string name="yacht_score_sixes">Sixes</string>
+    <string name="yacht_upper_total">Upper Total</string>
+    <string name="yacht_upper_bonus">Upper Bonus</string>
+    <string name="yacht_score_three_of_a_kind">Three of a Kind</string>
+    <string name="yacht_score_four_of_a_kind">Four of a Kind</string>
+    <string name="yacht_score_full_house">Full House</string>
+    <string name="yacht_score_small_straight">Small Straight</string>
+    <string name="yacht_score_large_straight">Large Straight</string>
+    <string name="yacht_score_yacht">YACHT</string>
+    <string name="yacht_score_choice">Choice</string>
+    <string name="yacht_lower_total">Lower Total</string>
+    <string name="yacht_grand_total">TOTAL</string>
+    <string name="yacht_roll_0_can_mark">Mark</string>
+    <string name="yacht_roll_0_cannot_mark">Game</string>
+    <string name="yacht_roll_1">🎲</string>
+    <string name="yacht_roll_2">🎲🎲</string>
 </resources>
