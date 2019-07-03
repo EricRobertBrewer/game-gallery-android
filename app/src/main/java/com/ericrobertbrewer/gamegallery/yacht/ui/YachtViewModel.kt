@@ -27,10 +27,14 @@ class YachtViewModel : ViewModel() {
 
     val scores = IntArray(NUM_LINES) { 0 }
     val isScoreMarked = BooleanArray(NUM_LINES) { false }
-    val upperTotal = scores.filterIndexed { line, _ -> line <= LINE_SIXES }.sum()
-    val upperBonus = if (upperTotal >= 63) 35 else 0
-    val lowerTotal = scores.filterIndexed { line, _ -> line >= LINE_THREE_OF_A_KIND }.sum()
-    val grandTotal = upperTotal + upperBonus + lowerTotal
+    val upperTotal
+        get() = scores.filterIndexed { line, _ -> line <= LINE_SIXES }.sum()
+    val upperBonus
+        get() = if (upperTotal >= 63) 35 else 0
+    val lowerTotal
+        get() = scores.filterIndexed { line, _ -> line >= LINE_THREE_OF_A_KIND }.sum()
+    val grandTotal
+        get() = upperTotal + upperBonus + lowerTotal
 
     val dice = Array(NUM_DICE) { Die(6) }
     val isDieHeld = BooleanArray(NUM_DICE) { false }
@@ -47,7 +51,7 @@ class YachtViewModel : ViewModel() {
         startNextRound()
     }
 
-    fun startNextRound() {
+    private fun startNextRound() {
         isDieHeld.fill(false)
         rolls = NUM_ROLLS
         rollDice()

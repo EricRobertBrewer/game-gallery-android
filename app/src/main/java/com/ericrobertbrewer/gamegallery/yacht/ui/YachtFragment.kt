@@ -100,11 +100,11 @@ class YachtFragment : Fragment() {
             updateDice()
         }
         dieButtons = arrayOf(
-                yachtDiceButton0,
-                yachtDiceButton1,
-                yachtDiceButton2,
-                yachtDiceButton3,
-                yachtDiceButton4
+                yachtDieButton0,
+                yachtDieButton1,
+                yachtDieButton2,
+                yachtDieButton3,
+                yachtDieButton4
         )
         dieButtons.forEachIndexed { i, button ->
             button.setOnClickListener {
@@ -115,11 +115,11 @@ class YachtFragment : Fragment() {
             }
         }
         dieHeldButtons = arrayOf(
-                yachtDiceHeldButton0,
-                yachtDiceHeldButton1,
-                yachtDiceHeldButton2,
-                yachtDiceHeldButton3,
-                yachtDiceHeldButton4
+                yachtDieHeldButton0,
+                yachtDieHeldButton1,
+                yachtDieHeldButton2,
+                yachtDieHeldButton3,
+                yachtDieHeldButton4
         )
         dieHeldButtons.forEachIndexed { i, button ->
             button.setOnClickListener {
@@ -217,8 +217,9 @@ class YachtFragment : Fragment() {
     }
 
     private fun updateDie(i: Int) {
-        dieButtons[i].text = viewModel.dice[i].value.toString()
-        dieHeldButtons[i].text = viewModel.dice[i].value.toString()
+        val valueString = viewModel.dice[i].value.toString()
+        dieButtons[i].text = valueString
+        dieHeldButtons[i].text = valueString
         if (viewModel.isDieHeld[i]) {
             dieButtons[i].visibility = View.INVISIBLE
             dieHeldButtons[i].visibility = View.VISIBLE

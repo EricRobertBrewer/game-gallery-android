@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DieButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">@dimen/die_dim</item>
+        <item name="android:layout_height">@dimen/die_dim</item>
+        <item name="android:textSize">@dimen/die_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DieButton.Colored" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">@dimen/die_dim</item>
+        <item name="android:layout_height">@dimen/die_dim</item>
+        <item name="android:textSize">@dimen/die_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Yacht.Score.Title">
+        <item name="android:gravity">center_vertical|end</item>
+    </style>
+
 </resources>

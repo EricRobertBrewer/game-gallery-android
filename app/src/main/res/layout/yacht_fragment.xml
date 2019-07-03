@@ -29,12 +29,12 @@
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:gravity="center_vertical|end"
             android:text="@string/yacht_score_ones"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/yachtUpperOnesScoreLabel"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Yacht.Score.Title" />
 
         <TextView
             android:id="@+id/yachtUpperOnesScoreLabel"
@@ -728,38 +728,28 @@
         app:layout_constraintTop_toBottomOf="@+id/yachtGrandTotalLayout">
 
         <Button
-            android:id="@+id/yachtDiceButton0"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieButton0"
+            style="@style/DieButton"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceButton1"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieButton1"
+            style="@style/DieButton"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceButton2"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieButton2"
+            style="@style/DieButton"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceButton3"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieButton3"
+            style="@style/DieButton"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceButton4"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieButton4"
+            style="@style/DieButton"
             tools:text="6" />
     </LinearLayout>
 
@@ -773,47 +763,32 @@
         app:layout_constraintTop_toBottomOf="@+id/yachtDiceLayout">
 
         <Button
-            android:id="@+id/yachtDiceHeldButton0"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieHeldButton0"
+            style="@style/DieButton.Colored"
             android:visibility="invisible"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceHeldButton1"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieHeldButton1"
+            style="@style/DieButton.Colored"
             android:visibility="invisible"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceHeldButton2"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieHeldButton2"
+            style="@style/DieButton.Colored"
             android:visibility="invisible"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceHeldButton3"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieHeldButton3"
+            style="@style/DieButton.Colored"
             android:visibility="invisible"
             tools:text="6" />
 
         <Button
-            android:id="@+id/yachtDiceHeldButton4"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="@dimen/die_dim"
-            android:layout_height="@dimen/die_dim"
-            android:layout_weight="1"
+            android:id="@+id/yachtDieHeldButton4"
+            style="@style/DieButton.Colored"
             android:visibility="invisible"
             tools:text="6" />
     </LinearLayout>

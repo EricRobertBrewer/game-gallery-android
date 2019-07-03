@@ -26,7 +26,7 @@
     <string name="yacht_lower_total">Lower Total</string>
     <string name="yacht_grand_total">TOTAL</string>
     <string name="yacht_roll_0_can_mark">Mark</string>
-    <string name="yacht_roll_0_cannot_mark">Game</string>
+    <string name="yacht_roll_0_cannot_mark">Game Over</string>
     <string name="yacht_roll_1">🎲</string>
     <string name="yacht_roll_2">🎲🎲</string>
 </resources>
