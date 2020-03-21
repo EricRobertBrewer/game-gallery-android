@@ -1,6 +1,6 @@
 package com.ericrobertbrewer.gamegallery.yacht.ui
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.ericrobertbrewer.gamegallery.util.Die
 
 class YachtViewModel : ViewModel() {

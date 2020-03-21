@@ -1,13 +1,13 @@
 package com.ericrobertbrewer.gamegallery.yacht.ui
 
-import android.arch.lifecycle.ViewModelProviders
 import android.graphics.Typeface
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.v4.app.Fragment
 import android.view.*
 import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.ericrobertbrewer.gamegallery.R
 import kotlinx.android.synthetic.main.yacht_fragment.*
 
@@ -38,7 +38,7 @@ class YachtFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(YachtViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(YachtViewModel::class.java)
         scoreLayouts = arrayOf(
                 yachtUpperOnesLayout,
                 yachtUpperTwosLayout,
@@ -132,13 +132,13 @@ class YachtFragment : Fragment() {
         updateAll()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.yacht, menu)
+        inflater.inflate(R.menu.yacht, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             R.id.yachtMenuNewGame -> {
                 viewModel.newGame()
                 updateAll()

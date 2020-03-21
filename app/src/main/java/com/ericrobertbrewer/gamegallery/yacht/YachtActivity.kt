@@ -1,6 +1,6 @@
 package com.ericrobertbrewer.gamegallery.yacht
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ericrobertbrewer.gamegallery.R
 import com.ericrobertbrewer.gamegallery.yacht.ui.YachtFragment
