@@ -3,5 +3,5 @@
 
     <item
         android:id="@+id/yachtMenuNewGame"
-        android:title="@string/new_game" />
+        android:title="@string/game_new" />
 </menu>

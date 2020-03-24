@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name=".yacht.YachtActivity"
-            android:label="@string/game_yacht" />
+            android:label="@string/title_yacht" />
     </application>
 
 </manifest>

@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Game Gallery</string>
-    <string name="game_checkers">Checkers</string>
-    <string name="game_go_fish">Go Fish</string>
-    <string name="game_dominoes">Dominoes</string>
-    <string name="game_backgammon">Backgammon</string>
-    <string name="game_yacht">Yacht</string>
-    <string name="new_game">New Game</string>
+    <string name="title_checkers">Checkers</string>
+    <string name="title_go_fish">Go Fish</string>
+    <string name="title_dominoes">Dominoes</string>
+    <string name="title_backgammon">Backgammon</string>
+    <string name="title_yacht">Yacht</string>
+    <string name="game_new">New Game</string>
+    <string name="game_over">Game Over</string>
     <string name="yacht_high_score">HIGH SCORE</string>
     <string name="yacht_score_not_marked">-</string>
     <string name="yacht_score_ones">Ones</string>
@@ -25,8 +26,8 @@
     <string name="yacht_score_choice">Choice</string>
     <string name="yacht_lower_total">Lower Total</string>
     <string name="yacht_grand_total">TOTAL</string>
-    <string name="yacht_roll_0_can_mark">Mark</string>
-    <string name="yacht_roll_0_cannot_mark">Game Over</string>
-    <string name="yacht_roll_1">🎲</string>
     <string name="yacht_roll_2">🎲🎲</string>
+    <string name="yacht_roll_1">🎲</string>
+    <string name="yacht_roll_or_mark">Roll or Mark</string>
+    <string name="yacht_mark">Mark</string>
 </resources>

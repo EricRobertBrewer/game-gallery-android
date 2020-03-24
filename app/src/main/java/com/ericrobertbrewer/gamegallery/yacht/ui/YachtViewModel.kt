@@ -57,7 +57,7 @@ class YachtViewModel : ViewModel() {
         rollDice()
     }
 
-    fun canRollDice() = rolls > 0
+    fun canRollDice() = canMark() && rolls > 0
 
     fun rollDice() {
         dice.forEachIndexed { i, die -> if (!isDieHeld[i]) die.roll() }
@@ -69,23 +69,28 @@ class YachtViewModel : ViewModel() {
     fun mark(line: Int) {
         if (line < 0 || line >= NUM_LINES) return
         if (isScoreMarked[line]) return
+        scores[line] = score(line)
+        isScoreMarked[line] = true
+        if (canMark()) startNextRound()
+    }
+
+    fun score(line: Int): Int {
         when (line) {
             LINE_ONES,
             LINE_TWOS,
             LINE_THREES,
             LINE_FOURS,
             LINE_FIVES,
-            LINE_SIXES -> scores[line] = values(dice).filter { value -> value == line + 1 }.sum()
-            LINE_THREE_OF_A_KIND -> scores[line] = if (hasLikeDice(dice, 3)) sum(dice) else 0
-            LINE_FOUR_OF_A_KIND -> scores[line] = if (hasLikeDice(dice, 4)) sum(dice) else 0
-            LINE_FULL_HOUSE -> scores[line] = if (hasFullHouse(dice)) 25 else 0
-            LINE_SMALL_STRAIGHT -> scores[line] = if (hasStraight(dice, 4)) 30 else 0
-            LINE_LARGE_STRAIGHT -> scores[line] = if (hasStraight(dice, 5)) 40 else 0
-            LINE_YACHT -> scores[line] = if (values(dice).all { value -> value == dice[0].value }) 50 else 0
-            LINE_CHOICE -> scores[line] = sum(dice)
+            LINE_SIXES -> return values(dice).filter { value -> value == line + 1 }.sum()
+            LINE_THREE_OF_A_KIND -> return if (hasLikeDice(dice, 3)) sum(dice) else 0
+            LINE_FOUR_OF_A_KIND -> return if (hasLikeDice(dice, 4)) sum(dice) else 0
+            LINE_FULL_HOUSE -> return if (hasFullHouse(dice)) 25 else 0
+            LINE_SMALL_STRAIGHT -> return if (hasStraight(dice, 4)) 30 else 0
+            LINE_LARGE_STRAIGHT -> return if (hasStraight(dice, 5)) 40 else 0
+            LINE_YACHT -> return if (values(dice).all { value -> value == dice[0].value }) 50 else 0
+            LINE_CHOICE -> return sum(dice)
         }
-        isScoreMarked[line] = true
-        if (canMark()) startNextRound()
+        throw IllegalArgumentException()
     }
 
     private fun values(dice: Array<Die>) = dice.map { die -> die.value }

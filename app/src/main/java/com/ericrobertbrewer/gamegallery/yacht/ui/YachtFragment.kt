@@ -1,6 +1,7 @@
 package com.ericrobertbrewer.gamegallery.yacht.ui
 
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
@@ -58,8 +59,8 @@ class YachtFragment : Fragment() {
             layout.setOnClickListener {
                 if (!viewModel.isScoreMarked[line]) {
                     viewModel.mark(line)
-                    updateScoreAndRelated(line)
-                    updateRollButton()
+                    updateScoresAndRelated()
+                    updateRollLabelAndButton()
                     updateDice()
                 }
             }
@@ -96,7 +97,8 @@ class YachtFragment : Fragment() {
         )
         yachtRollButton.setOnClickListener {
             viewModel.rollDice()
-            updateRollButton()
+            updateScores()
+            updateRollLabelAndButton()
             updateDice()
         }
         dieButtons = arrayOf(
@@ -149,42 +151,53 @@ class YachtFragment : Fragment() {
     }
 
     private fun updateAll() {
-        updateScores()
-        updateRollButton()
+        updateScoresAndRelated()
+        updateRollLabelAndButton()
         updateDice()
     }
 
-    private fun updateScores() {
-        viewModel.scores.forEachIndexed { line, _ ->
-            updateScore(line)
-        }
+    private fun updateScoresAndRelated() {
+        updateScores()
         updateUpperTotal()
         updateUpperBonus()
         updateLowerTotal()
         updateGrandTotal()
     }
 
+    private fun updateScores() {
+        viewModel.scores.forEachIndexed { line, _ ->
+            updateScore(line)
+        }
+    }
+
     private fun updateScore(line: Int) {
         if (viewModel.isScoreMarked[line]) {
             scoreTitleLabels[line].setTypeface(null, Typeface.NORMAL)
             scoreScoreLabels[line].text = viewModel.scores[line].toString()
+            scoreScoreLabels[line].setTextColor(scoreTitleLabels[line].textColors)
             scoreScoreLabels[line].setTypeface(null, Typeface.NORMAL)
         } else {
             scoreTitleLabels[line].setTypeface(null, Typeface.BOLD)
-            scoreScoreLabels[line].setText(R.string.yacht_score_not_marked)
+            val score = viewModel.score(line)
+            if (score != 0) {
+                scoreScoreLabels[line].text = score.toString()
+                if (Build.VERSION.SDK_INT < 23) {
+                    @Suppress("DEPRECATION")
+                    scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorPrimary))
+                } else {
+                    scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorPrimary, context?.theme))
+                }
+            } else {
+                scoreScoreLabels[line].setText(R.string.yacht_score_not_marked)
+                if (Build.VERSION.SDK_INT < 23) {
+                    @Suppress("DEPRECATION")
+                    scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorAccent))
+                } else {
+                    scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorAccent, context?.theme))
+                }
+            }
             scoreScoreLabels[line].setTypeface(null, Typeface.BOLD)
         }
-    }
-
-    private fun updateScoreAndRelated(line: Int) {
-        updateScore(line)
-        if (line <= YachtViewModel.LINE_SIXES) {
-            updateUpperTotal()
-            updateUpperBonus()
-        } else {
-            updateLowerTotal()
-        }
-        updateGrandTotal()
     }
 
     private fun updateUpperTotal() {
@@ -203,11 +216,23 @@ class YachtFragment : Fragment() {
         yachtGrandTotalScoreLabel.text = viewModel.grandTotal.toString()
     }
 
-    private fun updateRollButton() {
-        when (viewModel.rolls) {
-            2 -> yachtRollButton.setText(R.string.yacht_roll_2)
-            1 -> yachtRollButton.setText(R.string.yacht_roll_1)
-            0 -> yachtRollButton.setText(if (viewModel.canMark()) R.string.yacht_roll_0_can_mark else R.string.yacht_roll_0_cannot_mark)
+    private fun updateRollLabelAndButton() {
+        if (!viewModel.canMark()) {
+            yachtRollLabel.setText(R.string.game_over)
+        } else {
+            when (viewModel.rolls) {
+                2 -> {
+                    yachtRollLabel.setText(R.string.yacht_roll_or_mark)
+                    yachtRollButton.setText(R.string.yacht_roll_2)
+                }
+                1 -> {
+                    yachtRollLabel.setText(R.string.yacht_roll_or_mark)
+                    yachtRollButton.setText(R.string.yacht_roll_1)
+                }
+                0 -> {
+                    yachtRollLabel.setText(R.string.yacht_mark)
+                }
+            }
         }
         yachtRollButton.isEnabled = viewModel.canRollDice()
     }

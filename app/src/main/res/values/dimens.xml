@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="yacht_score_label_width">40sp</dimen>
-    <dimen name="yacht_score_label_margin_vertical">2dp</dimen>
+    <dimen name="yacht_score_label_margin_vertical">4dp</dimen>
     <dimen name="die_dim">60dp</dimen>
     <dimen name="die_text_size">24sp</dimen>
 </resources>

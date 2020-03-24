@@ -51,11 +51,11 @@ class GamesActivity : AppCompatActivity() {
     companion object {
 
         private val games: Array<Game> = arrayOf(
-//                Game(R.string.game_checkers, R.mipmap.ic_launcher, CheckersActivity::class.java),
-//                Game(R.string.game_go_fish, R.mipmap.ic_launcher, GoFishActivity::class.java),
-//                Game(R.string.game_dominoes, R.mipmap.ic_launcher, DominoesActivity::class.java),
-//                Game(R.string.game_backgammon, R.mipmap.ic_launcher, BackgammonActivity::class.java),
-                Game(R.string.game_yacht, R.mipmap.ic_launcher, YachtActivity::class.java)
+//                Game(R.string.title_checkers, R.mipmap.ic_launcher, CheckersActivity::class.java),
+//                Game(R.string.title_go_fish, R.mipmap.ic_launcher, GoFishActivity::class.java),
+//                Game(R.string.title_dominoes, R.mipmap.ic_launcher, DominoesActivity::class.java),
+//                Game(R.string.title_backgammon, R.mipmap.ic_launcher, BackgammonActivity::class.java),
+                Game(R.string.title_yacht, R.mipmap.ic_launcher, YachtActivity::class.java)
         )
     }
 }

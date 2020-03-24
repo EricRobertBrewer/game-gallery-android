@@ -64,6 +64,7 @@
 
         <TextView
             android:id="@+id/yachtUpperTwosTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -105,6 +106,7 @@
 
         <TextView
             android:id="@+id/yachtUpperThreesTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -146,6 +148,7 @@
 
         <TextView
             android:id="@+id/yachtUpperFoursTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -187,6 +190,7 @@
 
         <TextView
             android:id="@+id/yachtUpperFivesTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -228,6 +232,7 @@
 
         <TextView
             android:id="@+id/yachtUpperSixesTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -269,6 +274,7 @@
 
         <TextView
             android:id="@+id/yachtUpperTotalTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -310,6 +316,7 @@
 
         <TextView
             android:id="@+id/yachtUpperBonusTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -350,6 +357,7 @@
 
         <TextView
             android:id="@+id/yachtLowerThreeOfAKindTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -390,6 +398,7 @@
 
         <TextView
             android:id="@+id/yachtLowerFourOfAKindTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -430,6 +439,7 @@
 
         <TextView
             android:id="@+id/yachtLowerFullHouseTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -470,6 +480,7 @@
 
         <TextView
             android:id="@+id/yachtLowerSmallStraightTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -510,6 +521,7 @@
 
         <TextView
             android:id="@+id/yachtLowerLargeStraightTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -550,6 +562,7 @@
 
         <TextView
             android:id="@+id/yachtLowerYachtTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -590,6 +603,7 @@
 
         <TextView
             android:id="@+id/yachtLowerChoiceTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -630,6 +644,7 @@
 
         <TextView
             android:id="@+id/yachtLowerTotalTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -670,6 +685,7 @@
 
         <TextView
             android:id="@+id/yachtGrandTotalTitleLabel"
+            style="@style/ScoreTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -700,32 +716,38 @@
             tools:text="50" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/yachtRollButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
+    <TextView
+        android:id="@+id/yachtRollLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/yachtDiceLayout"
+        android:text="@string/yacht_roll_or_mark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/yachtRollButton"
         app:layout_constraintEnd_toStartOf="@+id/yachtHalfWidthGuideline"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yachtUpperBonusLayout"
+        app:layout_constraintStart_toStartOf="@+id/yachtDiceLayout"
+        app:layout_constraintTop_toTopOf="@+id/yachtRollButton" />
+
+    <Button
+        android:id="@+id/yachtRollButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/yachtHalfWidthGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/yachtGrandTotalLayout"
         tools:text="@string/yacht_roll_1" />
 
     <LinearLayout
         android:id="@+id/yachtDiceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yachtGrandTotalLayout">
+        app:layout_constraintTop_toBottomOf="@id/yachtRollButton">
 
         <Button
             android:id="@+id/yachtDieButton0"
