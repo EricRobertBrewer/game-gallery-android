@@ -29,17 +29,17 @@ class GamesActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-            val game = games[position]
-            holder.titleLabel.setText(game.nameResourceId)
-            holder.imageView.setImageResource(game.imageResourceId)
+            val gameItem = GAME_ITEMS[position]
+            holder.titleLabel.setText(gameItem.nameResourceId)
+            holder.imageView.setImageResource(gameItem.imageResourceId)
             holder.itemView.setOnClickListener {
-                val intent = Intent(it.context, game.aClass)
+                val intent = Intent(it.context, gameItem.aClass)
                 it.context.startActivity(intent)
             }
         }
 
         override fun getItemCount(): Int {
-            return games.size
+            return GAME_ITEMS.size
         }
     }
 
@@ -50,12 +50,12 @@ class GamesActivity : AppCompatActivity() {
 
     companion object {
 
-        private val games: Array<Game> = arrayOf(
+        private val GAME_ITEMS: Array<GameItem> = arrayOf(
 //                Game(R.string.title_checkers, R.mipmap.ic_launcher, CheckersActivity::class.java),
 //                Game(R.string.title_go_fish, R.mipmap.ic_launcher, GoFishActivity::class.java),
 //                Game(R.string.title_dominoes, R.mipmap.ic_launcher, DominoesActivity::class.java),
 //                Game(R.string.title_backgammon, R.mipmap.ic_launcher, BackgammonActivity::class.java),
-                Game(R.string.title_yacht, R.mipmap.ic_launcher, YachtActivity::class.java)
+                GameItem(R.string.title_yacht, R.mipmap.ic_launcher, YachtActivity::class.java)
         )
     }
 }
