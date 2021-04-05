@@ -7,5 +7,5 @@ import androidx.annotation.StringRes
 data class GameItem(
         @StringRes val nameResourceId: Int,
         @DrawableRes val imageResourceId: Int,
-        val aClass: Class<out Activity>
+        val clazz: Class<out Activity>
 )

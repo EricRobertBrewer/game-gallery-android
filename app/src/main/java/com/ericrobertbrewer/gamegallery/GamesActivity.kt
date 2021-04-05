@@ -33,7 +33,7 @@ class GamesActivity : AppCompatActivity() {
             holder.titleLabel.setText(gameItem.nameResourceId)
             holder.imageView.setImageResource(gameItem.imageResourceId)
             holder.itemView.setOnClickListener {
-                val intent = Intent(it.context, gameItem.aClass)
+                val intent = Intent(it.context, gameItem.clazz)
                 it.context.startActivity(intent)
             }
         }
