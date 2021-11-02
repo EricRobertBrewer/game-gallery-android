@@ -10,52 +10,53 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.ericrobertbrewer.gamegallery.gofish.GoFishActivity
 import com.ericrobertbrewer.gamegallery.yacht.YachtActivity
-import kotlinx.android.synthetic.main.activity_games.*
+import kotlinx.android.synthetic.main.games_activity.*
 
 class GamesActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_games)
-        gamesRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        gamesRecyclerView.adapter = GamesAdapter()
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.games_activity)
+    gamesRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+    gamesRecyclerView.adapter = GamesAdapter()
+  }
+
+  private class GamesAdapter : RecyclerView.Adapter<GameViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameViewHolder {
+      return GameViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.game_item, parent, false))
     }
 
-    private class GamesAdapter : RecyclerView.Adapter<GameViewHolder>() {
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameViewHolder {
-            return GameViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.game_item, parent, false))
-        }
-
-        override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-            val gameItem = GAME_ITEMS[position]
-            holder.titleLabel.setText(gameItem.nameResourceId)
-            holder.imageView.setImageResource(gameItem.imageResourceId)
-            holder.itemView.setOnClickListener {
-                val intent = Intent(it.context, gameItem.clazz)
-                it.context.startActivity(intent)
-            }
-        }
-
-        override fun getItemCount(): Int {
-            return GAME_ITEMS.size
-        }
+    override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
+      val gameItem = GAME_ITEMS[position]
+      holder.titleLabel.setText(gameItem.nameResourceId)
+      holder.imageView.setImageResource(gameItem.imageResourceId)
+      holder.itemView.setOnClickListener {
+        val intent = Intent(it.context, gameItem.clazz)
+        it.context.startActivity(intent)
+      }
     }
 
-    private class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView = itemView.findViewById<AppCompatImageView>(R.id.gameItemImageView)!!
-        val titleLabel = itemView.findViewById<TextView>(R.id.gameItemTitleLabel)!!
+    override fun getItemCount(): Int {
+      return GAME_ITEMS.size
     }
+  }
 
-    companion object {
+  private class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    val imageView = itemView.findViewById<AppCompatImageView>(R.id.gameItemImageView)!!
+    val titleLabel = itemView.findViewById<TextView>(R.id.gameItemTitleLabel)!!
+  }
 
-        private val GAME_ITEMS: Array<GameItem> = arrayOf(
-//                Game(R.string.title_checkers, R.mipmap.ic_launcher, CheckersActivity::class.java),
-//                Game(R.string.title_go_fish, R.mipmap.ic_launcher, GoFishActivity::class.java),
-//                Game(R.string.title_dominoes, R.mipmap.ic_launcher, DominoesActivity::class.java),
-//                Game(R.string.title_backgammon, R.mipmap.ic_launcher, BackgammonActivity::class.java),
-                GameItem(R.string.title_yacht, R.mipmap.ic_launcher, YachtActivity::class.java)
-        )
-    }
+  companion object {
+
+    private val GAME_ITEMS: Array<GameItem> = arrayOf(
+//                GameItem(R.string.title_checkers, R.mipmap.ic_launcher, CheckersActivity::class.java),
+        GameItem(R.string.title_go_fish, R.mipmap.ic_launcher, GoFishActivity::class.java),
+//                GameItem(R.string.title_dominoes, R.mipmap.ic_launcher, DominoesActivity::class.java),
+//                GameItem(R.string.title_backgammon, R.mipmap.ic_launcher, BackgammonActivity::class.java),
+        GameItem(R.string.title_yacht, R.mipmap.ic_launcher, YachtActivity::class.java)
+    )
+  }
 }
