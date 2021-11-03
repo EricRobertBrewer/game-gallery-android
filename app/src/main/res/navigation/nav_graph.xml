@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/GamesFragment">
+
+    <fragment
+        android:id="@+id/GamesFragment"
+        android:name="com.ericrobertbrewer.gamegallery.GamesFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/games_fragment">
+
+        <action
+            android:id="@+id/action_GamesFragment_to_GoFishFragment"
+            app:destination="@id/GoFishFragment" />
+        <action
+            android:id="@+id/action_GamesFragment_to_YachtFragment"
+            app:destination="@id/YachtFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GoFishFragment"
+        android:name="com.ericrobertbrewer.gamegallery.gofish.GoFishFragment"
+        android:label="@string/title_go_fish"
+        tools:layout="@layout/go_fish_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/YachtFragment"
+        android:name="com.ericrobertbrewer.gamegallery.yacht.YachtFragment"
+        android:label="@string/title_yacht"
+        tools:layout="@layout/yacht_fragment">
+    </fragment>
+</navigation>

@@ -1,4 +1,4 @@
-package com.ericrobertbrewer.gamegallery.yacht.ui
+package com.ericrobertbrewer.gamegallery.yacht
 
 import android.graphics.Typeface
 import android.os.Build
@@ -13,10 +13,6 @@ import com.ericrobertbrewer.gamegallery.R
 import com.ericrobertbrewer.gamegallery.databinding.YachtFragmentBinding
 
 class YachtFragment : Fragment() {
-
-  companion object {
-    fun newInstance() = YachtFragment()
-  }
 
   private var _binding: YachtFragmentBinding? = null
   private val binding get() = _binding!!

@@ -1,4 +1,4 @@
-package com.ericrobertbrewer.gamegallery.yacht.ui
+package com.ericrobertbrewer.gamegallery.yacht
 
 import androidx.lifecycle.ViewModel
 import com.ericrobertbrewer.gamegallery.util.Die
@@ -106,7 +106,8 @@ class YachtViewModel : ViewModel() {
     return counts
   }
 
-  private fun hasLikeDice(dice: Array<Die>, count: Int) = counts(dice).values.any { value -> value >= count }
+  private fun hasLikeDice(dice: Array<Die>, count: Int) =
+    counts(dice).values.any { value -> value >= count }
 
   private fun hasFullHouse(dice: Array<Die>): Boolean {
     val counts = counts(dice)

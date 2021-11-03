@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".GamesActivity"
-            android:exported="true">
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +30,6 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".yacht.YachtActivity"
-            android:label="@string/title_yacht" />
     </application>
 
 </manifest>

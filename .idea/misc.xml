@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14351851851851852" />
+        <entry key="app/src/main/res/layout/game_item.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/games_activity.xml" value="0.14351851851851852" />
+        <entry key="app/src/main/res/layout/games_fragment.xml" value="0.13333333333333333" />
+        <entry key="app/src/main/res/layout/go_fish_fragment.xml" value="0.14351851851851852" />
+        <entry key="app/src/main/res/layout/main_activity.xml" value="0.14351851851851852" />
+        <entry key="app/src/main/res/layout/main_content.xml" value="0.14351851851851852" />
         <entry key="app/src/main/res/layout/yacht_fragment.xml" value="0.14351851851851852" />
       </map>
     </option>
