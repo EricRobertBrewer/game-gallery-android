@@ -1,6 +1,6 @@
-package com.ericrobertbrewer.gamegallery.yacht
+package com.ericrobertbrewer.gamegallery.util
 
-import java.util.*
+import java.util.Random
 
 class Die constructor(private val sides: Int) {
 

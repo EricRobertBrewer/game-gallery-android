@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.ericrobertbrewer.gamegallery.R
-import kotlinx.android.synthetic.main.yacht_fragment.*
+import com.ericrobertbrewer.gamegallery.databinding.YachtFragmentBinding
 
 class YachtFragment : Fragment() {
 
@@ -18,6 +18,8 @@ class YachtFragment : Fragment() {
     fun newInstance() = YachtFragment()
   }
 
+  private var _binding: YachtFragmentBinding? = null
+  private val binding get() = _binding!!
   private lateinit var viewModel: YachtViewModel
 
   private lateinit var scoreLayouts: Array<ConstraintLayout>
@@ -27,33 +29,32 @@ class YachtFragment : Fragment() {
   private lateinit var dieButtons: Array<Button>
   private lateinit var dieHeldButtons: Array<Button>
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                            savedInstanceState: Bundle?): View {
-    return inflater.inflate(R.layout.yacht_fragment, container, false)
+  override fun onCreateView(
+    inflater: LayoutInflater, container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View {
+    _binding = YachtFragmentBinding.inflate(inflater, container, false)
+    return binding.root
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     setHasOptionsMenu(true)
-  }
-
-  override fun onActivityCreated(savedInstanceState: Bundle?) {
-    super.onActivityCreated(savedInstanceState)
-    viewModel = ViewModelProvider(this).get(YachtViewModel::class.java)
+    viewModel = ViewModelProvider(this)[YachtViewModel::class.java]
     scoreLayouts = arrayOf(
-        yachtUpperOnesLayout,
-        yachtUpperTwosLayout,
-        yachtUpperThreesLayout,
-        yachtUpperFoursLayout,
-        yachtUpperFivesLayout,
-        yachtUpperSixesLayout,
-        yachtLowerThreeOfAKindLayout,
-        yachtLowerFourOfAKindLayout,
-        yachtLowerFullHouseLayout,
-        yachtLowerSmallStraightLayout,
-        yachtLowerLargeStraightLayout,
-        yachtLowerYachtLayout,
-        yachtLowerChoiceLayout
+      binding.yachtUpperOnesLayout,
+      binding.yachtUpperTwosLayout,
+      binding.yachtUpperThreesLayout,
+      binding.yachtUpperFoursLayout,
+      binding.yachtUpperFivesLayout,
+      binding.yachtUpperSixesLayout,
+      binding.yachtLowerThreeOfAKindLayout,
+      binding.yachtLowerFourOfAKindLayout,
+      binding.yachtLowerFullHouseLayout,
+      binding.yachtLowerSmallStraightLayout,
+      binding.yachtLowerLargeStraightLayout,
+      binding.yachtLowerYachtLayout,
+      binding.yachtLowerChoiceLayout
     )
     scoreLayouts.forEachIndexed { line, layout ->
       layout.setOnClickListener {
@@ -66,47 +67,47 @@ class YachtFragment : Fragment() {
       }
     }
     scoreTitleLabels = arrayOf(
-        yachtUpperOnesTitleLabel,
-        yachtUpperTwosTitleLabel,
-        yachtUpperThreesTitleLabel,
-        yachtUpperFoursTitleLabel,
-        yachtUpperFivesTitleLabel,
-        yachtUpperSixesTitleLabel,
-        yachtLowerThreeOfAKindTitleLabel,
-        yachtLowerFourOfAKindTitleLabel,
-        yachtLowerFullHouseTitleLabel,
-        yachtLowerSmallStraightTitleLabel,
-        yachtLowerLargeStraightTitleLabel,
-        yachtLowerYachtTitleLabel,
-        yachtLowerChoiceTitleLabel
+      binding.yachtUpperOnesTitleLabel,
+      binding.yachtUpperTwosTitleLabel,
+      binding.yachtUpperThreesTitleLabel,
+      binding.yachtUpperFoursTitleLabel,
+      binding.yachtUpperFivesTitleLabel,
+      binding.yachtUpperSixesTitleLabel,
+      binding.yachtLowerThreeOfAKindTitleLabel,
+      binding.yachtLowerFourOfAKindTitleLabel,
+      binding.yachtLowerFullHouseTitleLabel,
+      binding.yachtLowerSmallStraightTitleLabel,
+      binding.yachtLowerLargeStraightTitleLabel,
+      binding.yachtLowerYachtTitleLabel,
+      binding.yachtLowerChoiceTitleLabel
     )
     scoreScoreLabels = arrayOf(
-        yachtUpperOnesScoreLabel,
-        yachtUpperTwosScoreLabel,
-        yachtUpperThreesScoreLabel,
-        yachtUpperFoursScoreLabel,
-        yachtUpperFivesScoreLabel,
-        yachtUpperSixesScoreLabel,
-        yachtLowerThreeOfAKindScoreLabel,
-        yachtLowerFourOfAKindScoreLabel,
-        yachtLowerFullHouseScoreLabel,
-        yachtLowerSmallStraightScoreLabel,
-        yachtLowerLargeStraightScoreLabel,
-        yachtLowerYachtScoreLabel,
-        yachtLowerChoiceScoreLabel
+      binding.yachtUpperOnesScoreLabel,
+      binding.yachtUpperTwosScoreLabel,
+      binding.yachtUpperThreesScoreLabel,
+      binding.yachtUpperFoursScoreLabel,
+      binding.yachtUpperFivesScoreLabel,
+      binding.yachtUpperSixesScoreLabel,
+      binding.yachtLowerThreeOfAKindScoreLabel,
+      binding.yachtLowerFourOfAKindScoreLabel,
+      binding.yachtLowerFullHouseScoreLabel,
+      binding.yachtLowerSmallStraightScoreLabel,
+      binding.yachtLowerLargeStraightScoreLabel,
+      binding.yachtLowerYachtScoreLabel,
+      binding.yachtLowerChoiceScoreLabel
     )
-    yachtRollButton.setOnClickListener {
+    binding.yachtRollButton.setOnClickListener {
       viewModel.rollDice()
       updateScores()
       updateRollLabelAndButton()
       updateDice()
     }
     dieButtons = arrayOf(
-        yachtDieButton0,
-        yachtDieButton1,
-        yachtDieButton2,
-        yachtDieButton3,
-        yachtDieButton4
+      binding.yachtDieButton0,
+      binding.yachtDieButton1,
+      binding.yachtDieButton2,
+      binding.yachtDieButton3,
+      binding.yachtDieButton4
     )
     dieButtons.forEachIndexed { i, button ->
       button.setOnClickListener {
@@ -117,11 +118,11 @@ class YachtFragment : Fragment() {
       }
     }
     dieHeldButtons = arrayOf(
-        yachtDieHeldButton0,
-        yachtDieHeldButton1,
-        yachtDieHeldButton2,
-        yachtDieHeldButton3,
-        yachtDieHeldButton4
+      binding.yachtDieHeldButton0,
+      binding.yachtDieHeldButton1,
+      binding.yachtDieHeldButton2,
+      binding.yachtDieHeldButton3,
+      binding.yachtDieHeldButton4
     )
     dieHeldButtons.forEachIndexed { i, button ->
       button.setOnClickListener {
@@ -132,6 +133,11 @@ class YachtFragment : Fragment() {
       }
     }
     updateAll()
+  }
+
+  override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
   }
 
   override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -185,7 +191,12 @@ class YachtFragment : Fragment() {
           @Suppress("DEPRECATION")
           scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorPrimary))
         } else {
-          scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorPrimary, context?.theme))
+          scoreScoreLabels[line].setTextColor(
+            resources.getColor(
+              R.color.colorPrimary,
+              context?.theme
+            )
+          )
         }
       } else {
         scoreScoreLabels[line].setText(R.string.yacht_score_not_marked)
@@ -193,7 +204,12 @@ class YachtFragment : Fragment() {
           @Suppress("DEPRECATION")
           scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorAccent))
         } else {
-          scoreScoreLabels[line].setTextColor(resources.getColor(R.color.colorAccent, context?.theme))
+          scoreScoreLabels[line].setTextColor(
+            resources.getColor(
+              R.color.colorAccent,
+              context?.theme
+            )
+          )
         }
       }
       scoreScoreLabels[line].setTypeface(null, Typeface.BOLD)
@@ -201,40 +217,40 @@ class YachtFragment : Fragment() {
   }
 
   private fun updateUpperTotal() {
-    yachtUpperTotalScoreLabel.text = viewModel.upperTotal.toString()
+    binding.yachtUpperTotalScoreLabel.text = viewModel.upperTotal.toString()
   }
 
   private fun updateUpperBonus() {
-    yachtUpperBonusScoreLabel.text = viewModel.upperBonus.toString()
+    binding.yachtUpperBonusScoreLabel.text = viewModel.upperBonus.toString()
   }
 
   private fun updateLowerTotal() {
-    yachtLowerTotalScoreLabel.text = viewModel.lowerTotal.toString()
+    binding.yachtLowerTotalScoreLabel.text = viewModel.lowerTotal.toString()
   }
 
   private fun updateGrandTotal() {
-    yachtGrandTotalScoreLabel.text = viewModel.grandTotal.toString()
+    binding.yachtGrandTotalScoreLabel.text = viewModel.grandTotal.toString()
   }
 
   private fun updateRollLabelAndButton() {
     if (!viewModel.canMark()) {
-      yachtRollLabel.setText(R.string.game_over)
+      binding.yachtRollLabel.setText(R.string.game_over)
     } else {
       when (viewModel.rolls) {
         2 -> {
-          yachtRollLabel.setText(R.string.yacht_roll_or_mark)
-          yachtRollButton.setText(R.string.yacht_roll_2)
+          binding.yachtRollLabel.setText(R.string.yacht_roll_or_mark)
+          binding.yachtRollButton.setText(R.string.yacht_roll_2)
         }
         1 -> {
-          yachtRollLabel.setText(R.string.yacht_roll_or_mark)
-          yachtRollButton.setText(R.string.yacht_roll_1)
+          binding.yachtRollLabel.setText(R.string.yacht_roll_or_mark)
+          binding.yachtRollButton.setText(R.string.yacht_roll_1)
         }
         0 -> {
-          yachtRollLabel.setText(R.string.yacht_mark)
+          binding.yachtRollLabel.setText(R.string.yacht_mark)
         }
       }
     }
-    yachtRollButton.isEnabled = viewModel.canRollDice()
+    binding.yachtRollButton.isEnabled = viewModel.canRollDice()
   }
 
   private fun updateDice() {

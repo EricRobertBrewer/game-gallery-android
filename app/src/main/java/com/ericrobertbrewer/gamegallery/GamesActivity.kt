@@ -10,17 +10,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.ericrobertbrewer.gamegallery.databinding.GamesActivityBinding
 import com.ericrobertbrewer.gamegallery.gofish.GoFishActivity
 import com.ericrobertbrewer.gamegallery.yacht.YachtActivity
-import kotlinx.android.synthetic.main.games_activity.*
 
 class GamesActivity : AppCompatActivity() {
 
+  private lateinit var binding: GamesActivityBinding
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.games_activity)
-    gamesRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-    gamesRecyclerView.adapter = GamesAdapter()
+    binding = GamesActivityBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+    binding.gamesRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+    binding.gamesRecyclerView.adapter = GamesAdapter()
   }
 
   private class GamesAdapter : RecyclerView.Adapter<GameViewHolder>() {
